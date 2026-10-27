@@ -1,0 +1,33 @@
+{
+  "sources": ["ZoomerfiedNews", "WatcherGuru", "AGGRNEWSWIRE", "TreeNewsFeed", "defillama_tg"],
+  "poll_seconds": 900,
+  "timezone": "UTC",
+  "duplicate_window_days": 7,
+  "max_deliveries_per_poll": 50,
+  "crypto_context": [
+    "\\bcrypto(?:currency|currencies)?\\b", "\\bblockchain\\b", "\\bon[ -]?chain\\b", "\\bdefi\\b", "\\bdecentrali[sz]ed finance\\b",
+    "\\b(?:digital assets?|distributed ledger|dlt|cbdcs?|central bank digital currenc(?:y|ies))\\b",
+    "\\bbitcoin\\b|\\bbtc\\b", "\\bethereum\\b|\\beth\\b", "\\bsolana\\b", "\\bstablecoins?\\b",
+    "\\btokeni[sz](?:ation|ed|es?|ing)\\b", "\\brwa(?:s)?\\b", "\\bweb3\\b",
+    "\\b(?:coinbase|kraken|binance|okx|bybit|bitget|crypto\\.com|bitstamp|gemini|robinhood crypto|metamask|phantom|ledger|fireblocks|bitgo|anchorage|chainlink|hyperliquid|polymarket)\\b",
+    "\\b(?:aave|morpho|uniswap|lido|pendle|euler|compound|maple finance|centrifuge|ondo|securitize|etherfi|ether\\.fi|spark protocol)\\b",
+    "\\b(?:usdc|usdt|pyusd|eurc|rlusd|usde|usds|usd1|tether|circle|paxos|sky protocol)\\b"
+  ],
+  "topics": {
+    "Stablecoins": {"patterns": ["\\bstablecoins?\\b", "\\b(?:usdc|usdt|pyusd|eurc|rlusd|usde|usds|usd1|tether|paxos)\\b"], "requires_crypto": false},
+    "Tokenization / RWA": {"patterns": ["\\btokeni[sz](?:ation|ed|es?|ing)\\b", "\\brwas?\\b", "\\breal[ -]world assets?\\b", "\\b(?:ondo|securitize|centrifuge|buidl)\\b"], "requires_crypto": false},
+    "DeFi / vaults / yield": {"patterns": ["\\bdefi\\b", "\\bdecentrali[sz]ed finance\\b", "\\b(?:aave|morpho|uniswap|lido|pendle|euler|compound|etherfi|ether\\.fi|maple finance|spark protocol)\\b", "\\b(?:vaults?|yield|lending|borrowing|staking|restaking|liquidity pools?|collateral|private credit)\\b"], "requires_crypto": true},
+    "Consumer products": {"patterns": ["\\b(?:wallets?|fintech|neobanks?|cards?|remittances?|retail|consumers?|savings|brokerage|investment app|trading app|prediction markets?)\\b"], "requires_crypto": true},
+    "Institutional infrastructure": {"patterns": ["\\b(?:banks?|banking|institutional|payments?|settlement|clearing|custody|custodian|interoperability|bridges?|exchanges?|asset management|funds?|etfs?|treasur(?:y|ies)|collateral|broker[ -]dealer|market maker|liquidity provider)\\b"], "requires_crypto": true},
+    "Regulation / access": {"patterns": ["\\b(?:regulat\\w*|licen[cs]\\w*|legislation|laws?|rules?|guidance|approved?|approval|compliance|mica|clarity act|sec|cftc|finra|nydfs|aml|kyc|sanctions|surveillance|unhosted|permission)\\b"], "requires_crypto": true},
+    "Funding / M&A": {"patterns": ["\\b(?:acquir\\w*|acquisition|merg\\w*|fundrais\\w*|funding|raises?|raised|series [a-f]|investments?|invests?|invested|ipo|valuation)\\b"], "requires_crypto": true},
+    "Technology / security / research": {"patterns": ["\\b(?:upgrad\\w*|integrat\\w*|launch\\w*|releas\\w*|deploy\\w*|mainnet|testnet|devnet|pilot|partnership|partners?|rollout|roll out|roadmap|sdk|api|account abstraction|eip[ -]?\\d+|adoption|tvl|volume|research|report|study|data|hack\\w*|exploit\\w*|breach|depeg|shutdown|shut\\w* down|withdrawals?|suspend\\w*)\\b"], "requires_crypto": true}
+  },
+  "exclusions": {
+    "routine_price_move": ["(?:\\$?\\b(?:btc|bitcoin|eth|ethereum|bnb|sol|solana)\\b).{0,35}\\b(?:surpasses?|hits?|breaks?|surges?|drops?|falls?|trades? above|trades? below)\\b.{0,25}(?:\\$|usd|%|all.time.high)"],
+    "routine_treasury_purchase": ["\\b(?:strategy|saylor|bitmine)\\b.{0,45}\\b(?:buys?|bought|purchases?|purchased|adds?|added)\\b.{0,55}\\b(?:bitcoin|btc|ethereum|eth)\\b"],
+    "routine_fund_flows": ["\\betf\\b.{0,30}\\b(?:inflows?|outflows?|net flows?)\\b", "\\b(?:inflows?|outflows?)\\b.{0,30}\\betfs?\\b"],
+    "trading_signal_or_promotion": ["\\b(?:100x|buy signal|sell signal|entry price|stop loss|take profit|guaranteed returns?|join our vip|join our premium|use (?:my|our) referral)\\b"]
+  },
+  "material_event_override": "\\b(?:launch\\w*|integrat\\w*|acquir\\w*|merg\\w*|partnership|pilot|licen[cs]\\w*|approv\\w*|regulat\\w*|legislation|adoption|depeg|exploit\\w*|hack\\w*|withdrawals?|suspend\\w*)\\b"
+}

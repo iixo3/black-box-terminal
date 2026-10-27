@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>September · Your news review</title>
+<style>
+:root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#20312c;background:#f2f3ef;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button,a,input,select,textarea{outline-offset:4px}button{cursor:pointer}button:disabled{opacity:.4;cursor:default}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #51896e}
+.shell{max-width:1320px;margin:auto;padding:30px 30px 110px}.top{display:flex;align-items:center;justify-content:space-between;gap:20px}.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#65756c;font-weight:700}h1{font-size:30px;letter-spacing:-.03em;margin:7px 0 8px}h2{font-size:17px;margin:0 0 12px}p{line-height:1.5}.subtitle{font-size:14px;color:#62726a;margin:0}.top-actions{display:flex;gap:8px;align-items:center}.small-btn{border:1px solid #cbd4cc;background:#fff;border-radius:9px;padding:9px 13px;font-size:13px;white-space:nowrap}.export{background:#254f3d;color:white;border-color:#254f3d;font-weight:600}
+.progress{margin:25px 0 20px}.progress-line{display:flex;justify-content:space-between;align-items:center;gap:15px;font-size:13px;color:#52655b}.progress-line strong{color:#20382c}.track{height:5px;background:#dce2db;border-radius:5px;margin:10px 0 12px;overflow:hidden}.fill{height:100%;background:#3f805c;transition:width .15s}.counts{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:#617068}.counts b{color:#304d3b}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:22px;align-items:start}.card,.aside{background:#fff;border:1px solid #dce3da;border-radius:15px}.card{overflow:hidden}.navigation{display:flex;justify-content:space-between;align-items:center;padding:15px 22px;border-bottom:1px solid #e8ece6;gap:10px}.navigation .small-btn{padding:6px 10px}.position{font-size:12px;color:#68776e}.story{padding:26px 28px 28px;min-height:280px}.story-meta{display:flex;gap:9px;align-items:center;flex-wrap:wrap;font-size:12px;color:#69776f}.source{font-weight:700;color:#365647}.badge{background:#eef3ed;color:#48634f;padding:4px 8px;border-radius:5px;font-size:11px}.badge.keep{background:#e2f2e8;color:#256541}.badge.drop{background:#faeae8;color:#943f36}.badge.duplicate{background:#eeebf7;color:#6a568e}.context{font-size:12px;color:#708074;margin-top:18px}.story-text{font-size:19px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere;margin:21px 0}.links{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0 0;font-size:13px}a{color:#2c6650;text-decoration:underline;text-underline-offset:3px}.media-notice{background:#fbf4df;color:#776330;border-radius:9px;padding:16px;line-height:1.6;font-size:15px}.note-area{border-top:1px solid #e8ece6;padding:15px 28px 20px}details summary{cursor:pointer;font-size:13px;color:#65776a}textarea{resize:vertical;width:100%;min-height:78px;margin-top:12px;border:1px solid #d4ddd3;border-radius:8px;padding:10px;font-size:13px;line-height:1.5}.decision-actions{display:grid;grid-template-columns:1fr 1fr;gap:11px;padding:19px 24px;background:#fbfcf9;border-top:1px solid #e8ece6}.decision{font-size:17px;font-weight:650;border:1px solid transparent;border-radius:10px;padding:15px;display:flex;justify-content:space-between;align-items:center}.drop-action{background:#f7e9e5;color:#974d41;border-color:#ecd3cc}.keep-action{background:#dceee3;color:#286443;border-color:#bfddc9}.secondary{grid-column:span 2;display:flex;justify-content:center;gap:22px}.text-btn{border:0;background:none;font-size:12px;color:#596e60;padding:5px}.key{display:inline-block;font-size:11px;font-weight:500;border:1px solid currentColor;border-radius:4px;padding:2px 5px;opacity:.7;margin-left:6px}
+.aside{padding:21px}.aside+.aside{margin-top:15px}.aside p{font-size:12px;color:#68786d}.audit-body{padding-top:15px;font-size:13px}.audit-body p{font-size:13px;margin:9px 0}.muted{color:#738077;font-size:12px}.related{border:1px solid #e2e7de;border-radius:9px;padding:12px;margin:10px 0}.related-meta{font-size:11px;color:#748275}.related pre{font:13px/1.55 inherit;white-space:pre-wrap;overflow-wrap:anywhere;max-height:230px;overflow:auto;margin:10px 0}.related-links{display:flex;gap:10px;align-items:center;justify-content:space-between;font-size:11px}.related button{border:1px solid #c8d6ca;background:#f3f7ef;border-radius:6px;padding:5px 8px;font-size:11px;color:#426044}.compare-search{width:100%;padding:9px 10px;border:1px solid #d4ddd3;border-radius:8px;font-size:12px;margin-top:8px}.search-result{display:block;text-align:left;width:100%;border:0;border-bottom:1px solid #e8eee4;background:#fff;padding:9px 3px;font-size:12px;line-height:1.4;color:#385043}.match{font-size:12px;background:#edf4e8;border-radius:7px;padding:9px;margin:10px 0;color:#496039}.match button{float:right;border:0;background:transparent;color:#496039}.filter{width:100%;border:1px solid #d4ddd3;border-radius:8px;padding:8px;font-size:12px;margin:10px 0}.jump{display:flex;align-items:center;gap:7px;font-size:12px}.jump input{width:65px;border:1px solid #d4ddd3;border-radius:6px;padding:5px}.shortcuts{border-top:1px solid #e5ebe0;margin-top:18px;padding-top:14px;line-height:2;font-size:12px;color:#65766a}
+.status-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(242,243,239,.97);border-top:1px solid #dce4d7;padding:12px 28px;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:12px;color:#647567}.save-error{color:#a04430}.toast{position:fixed;bottom:55px;left:50%;transform:translateX(-50%);background:#294f3d;color:#fff;border-radius:9px;padding:12px 18px;font-size:13px;z-index:5;max-width:90vw;box-shadow:0 5px 20px #16322120}.warning{background:#fff3d8;color:#6e541d;border:1px solid #e9d69c;border-radius:9px;margin:20px 0;padding:13px 16px;font-size:13px;line-height:1.5}.empty{padding:45px 30px;text-align:center}.empty h2{font-size:23px}.empty p{color:#68796d}.empty button{margin:10px}.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}[hidden]{display:none!important}
+@media(max-width:950px){.layout{grid-template-columns:minmax(0,1fr) 285px}.shell{padding:23px 20px 100px}.story{padding:22px}.story-text{font-size:17px}.aside{padding:17px}}@media(max-width:740px){.layout{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}.shell{padding:20px 14px 100px}.story{padding:20px}.story-text{font-size:17px}.status-bar{padding:11px 15px;font-size:11px}.counts{gap:12px}.secondary{gap:12px}.top-actions{flex-wrap:wrap}.decision-actions{padding:15px}.note-area{padding:15px 20px}.navigation{padding:13px 17px}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="top">
+    <div><div class="eyebrow">Your final word</div><h1 id="title">September review</h1><p class="subtitle">Product, market infrastructure &amp; TradFi ↔ crypto convergence</p></div>
+    <div class="top-actions"><button id="import" class="small-btn">Import backup</button><button id="export" class="small-btn export">Export decisions ↓</button><input id="import-file" type="file" accept=".json,application/json" hidden></div>
+  </header>
+  <section class="progress" aria-label="Review progress">
+    <div class="progress-line"><strong id="progress-label"></strong><span id="remaining"></span></div><div class="track"><div id="progress-fill" class="fill"></div></div><div id="counts" class="counts"></div>
+  </section>
+  <div id="storage-warning" class="warning" hidden></div>
+  <div id="restore-warning" class="warning" hidden></div>
+  <div id="dataset-notice" class="warning" hidden></div>
+  <div class="layout">
+    <main class="card">
+      <div class="navigation"><button id="previous" class="small-btn" aria-label="Previous item">← Previous</button><span id="position" class="position"></span><button id="next" class="small-btn" aria-label="Next item">Next →</button></div>
+      <div id="review-card">
+        <article class="story"><div class="story-meta"><span id="source" class="source"></span><span id="date"></span><span id="manual-status" class="badge"></span></div><div id="context" class="context"></div><div id="review-warning" class="warning" hidden></div><div id="text" class="story-text"></div><div id="media-notice" class="media-notice" hidden>No text was captured for this post. Open the original Telegram post to inspect its image or video, then decide. Use Later if you cannot review it now.</div><div id="links" class="links"></div></article>
+        <div class="note-area"><details id="note-details"><summary>Optional note for later</summary><textarea id="note" maxlength="3000" placeholder="No explanation required. Add one only if useful." aria-label="Optional note"></textarea></details></div>
+        <div class="decision-actions"><button id="drop" class="decision drop-action"><span>Drop</span><span class="key">←</span></button><button id="keep" class="decision keep-action"><span>Keep</span><span class="key">→</span></button><div class="secondary"><button id="duplicate" class="text-btn">Duplicate <span class="key">D</span></button><button id="later" class="text-btn">Later <span class="key">L</span></button><button id="undo" class="text-btn">Undo <span class="key">U</span></button></div></div>
+      </div>
+      <div id="empty" class="empty" hidden><h2>Review complete</h2><p>All items have your final decision. Export them when ready.</p><button id="finish-export" class="small-btn export">Export final decisions ↓</button><button id="empty-undo" class="small-btn">Undo last choice</button><button id="review-all" class="small-btn">Review my choices</button></div>
+    </main>
+    <div id="sidebar">
+      <section class="aside"><details id="audit-details"><summary>Show Luna’s recommendation</summary><div id="audit" class="audit-body"></div></details></section>
+      <section class="aside"><h2>Compare stories</h2><p>Keep distinct developments. Mark repeated coverage as Duplicate. A matching item is optional.</p><div id="duplicate-match" class="match" hidden></div><div id="related"></div><input id="compare-search" class="compare-search" type="search" placeholder="Find a story, #number or ID…" aria-label="Find a story to compare"><div id="search-results"></div><div id="comparison"></div></section>
+      <section class="aside"><h2>Your review</h2><label for="scope" class="muted">Show</label><select id="scope" class="filter"><option value="pending">Items still to review</option><option value="all">All items</option><option value="decided">My completed decisions</option><option value="later">Items marked Later</option></select><label class="jump">Go to item <input id="jump-number" type="number" min="1" aria-label="Go to item number"><button id="jump" class="small-btn">Go</button></label><div class="shortcuts">← Drop &nbsp; · &nbsp; → Keep<br>D Duplicate &nbsp; · &nbsp; L Later &nbsp; · &nbsp; U Undo<br>Shortcuts pause while you type.</div></section>
+    </div>
+  </div>
+</div>
+<footer class="status-bar"><span id="save-status" role="status">Saving available…</span><span>Export a backup when you pause or finish.</span></footer>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<script id="review-data" type="application/json">__REVIEW_DATA__</script>
+<script>
+'use strict';
+const DATA=JSON.parse(document.getElementById('review-data').textContent);
+const ITEMS=DATA.items, BY_ID=new Map(ITEMS.map((item,index)=>[item.id,{...item,number:index+1}]));
+const STORAGE_KEY='crypto-news-watcher:manual-review:'+DATA.dataset_sha256;
+const FINAL=new Set(['keep','drop','duplicate']), VALID=new Set([...FINAL,'later']);
+const $=id=>document.getElementById(id);
+const now=()=>new Date().toISOString();
+function fresh(){return {version:1,dataset_sha256:DATA.dataset_sha256,decisions:{},drafts:{},history:[],cursor:ITEMS[0].id,updated_at:now()};}
+let state=DATA.initial_state?validateState(DATA.initial_state):fresh(),scope='pending',storageAvailable=true,toastTimer;
+function safeDraft(value,id){
+  if(!value||typeof value.note!=='string'||value.note.length>3000||value.duplicate_of!=null&&(!BY_ID.has(value.duplicate_of)||value.duplicate_of===id))throw Error('Invalid saved note.');
+  return {note:value.note,duplicate_of:value.duplicate_of||null};
+}
+function safeEntry(entry,id){
+  if(!entry||!VALID.has(entry.decision)||typeof entry.note!=='string'||entry.note.length>3000)throw Error('Invalid saved decision.');
+  if(entry.duplicate_of!=null&&(!BY_ID.has(entry.duplicate_of)||entry.duplicate_of===id))throw Error('Invalid duplicate reference.');
+  return {decision:entry.decision,note:entry.note,duplicate_of:entry.decision==='duplicate'?(entry.duplicate_of||null):null,decided_at:typeof entry.decided_at==='string'?entry.decided_at:now()};
+}
+function validateState(value){
+  if(!value||value.version!==1||value.dataset_sha256!==DATA.dataset_sha256||!value.decisions||!value.drafts||!Array.isArray(value.history))throw Error('Saved progress does not match this report.');
+  const clean=fresh();
+  for(const [id,entry] of Object.entries(value.decisions)){if(!BY_ID.has(id))throw Error('Unknown saved item.');clean.decisions[id]=safeEntry(entry,id);}
+  for(const [id,draft] of Object.entries(value.drafts)){
+    if(!BY_ID.has(id))throw Error('Unknown saved item.');
+    clean.drafts[id]=safeDraft(draft,id);
+  }
+  for(const action of value.history.slice(-1200)){
+    if(!action||!BY_ID.has(action.id))throw Error('Invalid saved undo history.');
+    clean.history.push({id:action.id,previous:action.previous? safeEntry(action.previous,action.id):null,previous_draft:action.previous_draft?safeDraft(action.previous_draft,action.id):null});
+  }
+  clean.cursor=BY_ID.has(value.cursor)?value.cursor:ITEMS[0].id;
+  return clean;
+}
+try{const raw=localStorage.getItem(STORAGE_KEY);if(raw){try{state=validateState(JSON.parse(raw));}catch(error){$('restore-warning').textContent='Saved progress could not be restored. It has not been overwritten. Import an exported backup to recover it.';$('restore-warning').hidden=false;storageAvailable=false;}}}catch(error){storageAvailable=false;}
+function notice(text){clearTimeout(toastTimer);$('toast').textContent=text;$('toast').hidden=false;toastTimer=setTimeout(()=>$('toast').hidden=true,3200);}
+function save(){
+  state.updated_at=now();
+  try{if(!storageAvailable)throw Error();localStorage.setItem(STORAGE_KEY,JSON.stringify(state));$('save-status').textContent='Saved in this browser · '+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});$('save-status').classList.remove('save-error');$('storage-warning').hidden=true;return true;}
+  catch(error){storageAvailable=false;$('save-status').textContent='Auto-save unavailable · Export your progress';$('save-status').classList.add('save-error');$('storage-warning').textContent='This browser cannot save progress automatically. Open the page in your normal browser (Chrome recommended), or export decisions before closing. Your choices still work in this session.';$('storage-warning').hidden=false;return false;}
+}
+function isFinal(id){return FINAL.has(state.decisions[id]?.decision);}
+function counts(){const result={keep:0,drop:0,duplicate:0,later:0};for(const entry of Object.values(state.decisions))result[entry.decision]++;return {...result,reviewed:result.keep+result.drop+result.duplicate};}
+function queue(){
+  let items=ITEMS;
+  if(scope==='pending')items=ITEMS.filter(i=>!isFinal(i.id));
+  if(scope==='decided')items=ITEMS.filter(i=>isFinal(i.id));
+  if(scope==='later')items=ITEMS.filter(i=>state.decisions[i.id]?.decision==='later');
+  if(scope==='pending')items=items.slice().sort((a,b)=>{const x=state.decisions[a.id],y=state.decisions[b.id];return Number(x?.decision==='later')-Number(y?.decision==='later')||(x?.decision==='later'&&y?.decision==='later'?x.decided_at.localeCompare(y.decided_at):0);});
+  return items;
+}
+function active(){const items=queue();if(!items.some(i=>i.id===state.cursor))state.cursor=items[0]?.id||null;return BY_ID.get(state.cursor)||null;}
+function draft(item){return state.drafts[item.id]||{note:state.decisions[item.id]?.note||'',duplicate_of:state.decisions[item.id]?.duplicate_of||null};}
+function rememberDraft(){const item=BY_ID.get(state.cursor);if(!item)return;state.drafts[item.id]={...draft(item),note:$('note').value};save();}
+function link(url,text){const a=document.createElement('a');try{const parsed=new URL(url);if(!['https:','http:'].includes(parsed.protocol))return null;a.href=parsed.href;}catch(error){return null;}a.textContent=text;a.target='_blank';a.rel='noopener noreferrer';return a;}
+function textElement(tag,text,className){const el=document.createElement(tag);el.textContent=text;if(className)el.className=className;return el;}
+function updateMatch(){
+  const item=BY_ID.get(state.cursor),target=item&&draft(item).duplicate_of;
+  $('duplicate-match').replaceChildren();$('duplicate-match').hidden=!target;
+  if(target){$('duplicate-match').append(textElement('span','Duplicate match: #'+BY_ID.get(target).number));const clear=document.createElement('button');clear.textContent='Clear';clear.onclick=()=>{state.drafts[item.id]={...draft(item),duplicate_of:null};save();updateMatch();};$('duplicate-match').append(clear);}
+}
+function setMatch(id){const item=BY_ID.get(state.cursor);if(!item||id===item.id)return;state.drafts[item.id]={...draft(item),duplicate_of:id};save();updateMatch();notice('Match selected. Press D to mark this item as a duplicate.');}
+function relatedCard(id){
+  const item=BY_ID.get(id),box=document.createElement('div');box.className='related';
+  box.append(textElement('div','#'+item.number+' · '+item.source+' · '+(state.decisions[id]?.decision||'Not reviewed'),'related-meta'));
+  box.append(textElement('pre',item.text||'[Media-only post — open original]'));
+  const actions=document.createElement('div');actions.className='related-links';const sourceLink=link(item.source_url,'Original post ↗');if(sourceLink)actions.append(sourceLink);
+  const match=document.createElement('button');match.textContent='Use as match';match.onclick=()=>setMatch(id);actions.append(match);box.append(actions);return box;
+}
+function render(){
+  const c=counts(),item=active(),items=queue();
+  $('dataset-notice').textContent=DATA.notice||'';$('dataset-notice').hidden=!DATA.notice;
+  $('title').textContent=DATA.title+' review';document.title=DATA.title+' · Your news review';
+  $('progress-label').textContent=c.reviewed+' of '+ITEMS.length+' reviewed';$('remaining').textContent=(ITEMS.length-c.reviewed)+' remaining';$('progress-fill').style.width=(100*c.reviewed/ITEMS.length)+'%';
+  $('counts').replaceChildren(...['keep','drop','duplicate','later'].map(status=>{const span=document.createElement('span');span.append(textElement('b',String(c[status])),document.createTextNode(' '+status));return span;}));
+  $('undo').disabled=!state.history.length;$('empty-undo').disabled=!state.history.length;$('scope').value=scope;$('jump-number').max=ITEMS.length;
+  $('empty').hidden=!!item;$('review-card').hidden=!item;$('sidebar').hidden=!item;
+  $('previous').disabled=!item||items.findIndex(i=>i.id===item.id)<=0;$('next').disabled=!item||items.findIndex(i=>i.id===item.id)>=items.length-1;
+  if(!item){const complete=c.reviewed===ITEMS.length;$('position').textContent=complete?'All '+ITEMS.length+' items reviewed':'No items in this view';$('empty').querySelector('h2').textContent=complete?'Review complete':'Nothing in this view';$('empty').querySelector('p').textContent=complete?'All items have your final decision. Export them when ready.':'Switch to all items to continue.';return;}
+  $('position').textContent='Item '+item.number+' of '+ITEMS.length;$('jump-number').value=item.number;
+  $('source').textContent=item.source;$('date').textContent=new Intl.DateTimeFormat('en-GB',{dateStyle:'medium',timeStyle:'short',timeZone:'UTC'}).format(new Date(item.date));
+  const decision=state.decisions[item.id]?.decision;$('manual-status').textContent=decision?'Your choice: '+decision:'Not reviewed';$('manual-status').className='badge '+(decision||'');
+  $('context').textContent=item.context||'';$('context').hidden=!item.context;$('text').textContent=item.text;$('text').hidden=!item.text.trim();$('media-notice').hidden=!!item.text.trim();
+  $('review-warning').textContent=item.review_warning||'';$('review-warning').hidden=!item.review_warning||isFinal(item.id);
+  $('links').replaceChildren();const sourceLink=link(item.source_url,'Open original Telegram post ↗');if(sourceLink)$('links').append(sourceLink);[...new Set(item.links||[])].forEach((url,index)=>{const a=link(url,'Source link '+(index+1)+' ↗');if(a)$('links').append(a);});
+  $('note').value=draft(item).note;$('note-details').open=false;$('audit-details').open=false;
+  $('audit').replaceChildren(textElement('p','Original rules: '+item.original_status),textElement('p','Luna: '+item.recommended_status));
+  if(item.reason)$('audit').append(textElement('p',item.reason));if(item.confidence)$('audit').append(textElement('p','Confidence: '+item.confidence));
+  $('related').replaceChildren();const group=DATA.duplicate_groups.find(g=>g.member_ids.includes(item.id));
+  if(group){$('related').append(textElement('p',group.kind==='ambiguous'?'Possible overlap — check for a distinct update.':'Luna identified possible repeated coverage.','muted'));group.member_ids.filter(id=>id!==item.id).forEach(id=>{if(BY_ID.has(id))$('related').append(relatedCard(id));});}
+  else $('related').append(textElement('p','No duplicate group suggested for this item.','muted'));
+  $('compare-search').value='';$('search-results').replaceChildren();$('comparison').replaceChildren();updateMatch();
+}
+function decide(decision){
+  const item=active();if(!item)return;
+  const previous=state.decisions[item.id]?{...state.decisions[item.id]}:null,previousDraft=state.drafts[item.id]?{...state.drafts[item.id]}:null;
+  const value={...draft(item),note:$('note').value,decision,decided_at:now()};if(decision!=='duplicate')value.duplicate_of=null;
+  state.history.push({id:item.id,previous,previous_draft:previousDraft});state.history=state.history.slice(-1200);state.decisions[item.id]=value;state.drafts[item.id]={note:value.note,duplicate_of:value.duplicate_of};
+  if(scope==='pending'||scope==='later')state.cursor=null;
+  else{const items=queue(),position=items.findIndex(i=>i.id===item.id);state.cursor=items[position+1]?.id||item.id;}
+  render();save();window.scrollTo({top:0,behavior:'auto'});notice('#'+item.number+' marked '+decision+(decision==='duplicate'&&!value.duplicate_of?' · match can be clarified later':''));
+}
+function undo(){const action=state.history.pop();if(!action)return;action.previous?state.decisions[action.id]=action.previous:delete state.decisions[action.id];action.previous_draft?state.drafts[action.id]=action.previous_draft:delete state.drafts[action.id];state.cursor=action.id;if(scope!=='all'&&!queue().some(i=>i.id===action.id))scope='all';render();save();window.scrollTo({top:0,behavior:'auto'});notice('Last choice undone.');}
+function navigate(step){const items=queue(),index=items.findIndex(i=>i.id===state.cursor),next=items[index+step];if(!next)return;rememberDraft();state.cursor=next.id;render();save();window.scrollTo({top:0,behavior:'auto'});}
+function exportReview(){
+  if(BY_ID.has(state.cursor))rememberDraft();const c=counts();
+  const result={schema_version:1,dataset_id:DATA.dataset_id,dataset_sha256:DATA.dataset_sha256,title:DATA.title,exported_at:now(),cursor_id:state.cursor,complete:c.reviewed===ITEMS.length,reviewed_count:c.reviewed,remaining_count:ITEMS.length-c.reviewed,counts:c,
+    items:ITEMS.map(item=>{const entry=state.decisions[item.id],value=draft(item);return {id:item.id,final_decision:FINAL.has(entry?.decision)?entry.decision:null,review_status:FINAL.has(entry?.decision)?'decided':entry?.decision==='later'?'later':'unreviewed',note:value.note,duplicate_of:entry?.decision==='duplicate'?value.duplicate_of:null,decided_at:entry?.decided_at||null,source:item.source,date:item.date,text:item.text,context:item.context,source_url:item.source_url,links:item.links,luna_recommendation:item.recommended_status,original_decision:item.original_status};})};
+  const url=URL.createObjectURL(new Blob([JSON.stringify(result,null,2)+'\n'],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='human-review-'+DATA.title.toLowerCase().replace(/\s+/g,'-')+'-'+now().slice(0,10)+'.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);notice(c.reviewed===ITEMS.length?'Final decisions exported.':'Progress backup exported. You can import it to resume.');
+}
+async function importReview(file){
+  try{
+    const value=JSON.parse(await file.text());
+    if(value.schema_version!==1||value.dataset_sha256!==DATA.dataset_sha256||!Array.isArray(value.items)||value.items.length!==ITEMS.length)throw Error('This backup belongs to a different report or is incomplete.');
+    const next=fresh(),seen=new Set();
+    for(const row of value.items){
+      if(!BY_ID.has(row.id)||seen.has(row.id)||!['decided','later','unreviewed'].includes(row.review_status))throw Error('Invalid item IDs or review status.');seen.add(row.id);
+      if(typeof row.note!=='string'||row.note.length>3000)throw Error('Invalid note.');
+      if(row.review_status!=='decided'&&row.final_decision!==null)throw Error('A pending item cannot have a final decision.');
+      if(row.review_status==='decided'){if(!FINAL.has(row.final_decision))throw Error('Invalid final decision.');next.decisions[row.id]=safeEntry({decision:row.final_decision,note:row.note,duplicate_of:row.duplicate_of,decided_at:row.decided_at},row.id);}
+      else if(row.review_status==='later')next.decisions[row.id]=safeEntry({decision:'later',note:row.note,duplicate_of:null,decided_at:row.decided_at},row.id);
+      else if(row.final_decision!==null)throw Error('An unreviewed item cannot have a final decision.');
+      next.drafts[row.id]={note:row.note,duplicate_of:next.decisions[row.id]?.duplicate_of||null};
+    }
+    if(counts().reviewed>0&&!confirm('Replace current progress with this backup? Export current choices first if you want to keep both.'))return;
+    next.cursor=BY_ID.has(value.cursor_id)?value.cursor_id:ITEMS.find(i=>!FINAL.has(next.decisions[i.id]?.decision))?.id||ITEMS[0].id;
+    state=next;scope='pending';storageAvailable=true;$('restore-warning').hidden=true;render();save();notice('Backup imported. Continue where you left off.');
+  }catch(error){notice('Import failed: '+error.message);}finally{$('import-file').value='';}
+}
+['keep','drop','duplicate','later'].forEach(action=>$(action).onclick=()=>decide(action));$('undo').onclick=undo;$('empty-undo').onclick=undo;$('previous').onclick=()=>navigate(-1);$('next').onclick=()=>navigate(1);
+$('note').oninput=rememberDraft;$('export').onclick=exportReview;$('finish-export').onclick=exportReview;$('import').onclick=()=>$('import-file').click();$('import-file').onchange=e=>{if(e.target.files[0])importReview(e.target.files[0]);};
+$('scope').onchange=e=>{rememberDraft();scope=e.target.value;render();save();};$('review-all').onclick=()=>{scope='all';render();save();};
+$('jump').onclick=()=>{const number=Number($('jump-number').value);if(!Number.isInteger(number)||number<1||number>ITEMS.length){notice('Enter an item number from 1 to '+ITEMS.length+'.');return;}rememberDraft();scope='all';state.cursor=ITEMS[number-1].id;render();save();};
+$('compare-search').oninput=e=>{const query=e.target.value.trim().toLowerCase();$('search-results').replaceChildren();$('comparison').replaceChildren();if(!query)return;const number=query.match(/^#?(\d+)$/);const matches=ITEMS.filter((item,index)=>item.id!==state.cursor&&(number?index+1===Number(number[1]):item.id.includes(query)||item.text.toLowerCase().includes(query))).slice(0,5);for(const match of matches){const button=textElement('button','#'+BY_ID.get(match.id).number+' · '+(match.text||'Media-only post').replace(/\s+/g,' ').slice(0,110),'search-result');button.onclick=()=>{$('comparison').replaceChildren(relatedCard(match.id));$('search-results').replaceChildren();};$('search-results').append(button);}if(!matches.length)$('search-results').append(textElement('p','No matching story.','muted'));};
+document.addEventListener('keydown',event=>{if(event.defaultPrevented||event.repeat||event.ctrlKey||event.metaKey||event.altKey||event.shiftKey||!window.getSelection().isCollapsed||event.target.closest?.('input,textarea,select,[contenteditable="true"]'))return;const action={ArrowLeft:'drop',ArrowRight:'keep',d:'duplicate',l:'later',u:'undo'}[event.key.length===1?event.key.toLowerCase():event.key];if(!action)return;event.preventDefault();action==='undo'?undo():decide(action);});
+window.addEventListener('storage',event=>{if(event.key===STORAGE_KEY&&event.newValue){try{state=validateState(JSON.parse(event.newValue));render();notice('Progress updated from your other tab.');}catch(error){notice('Other-tab progress could not be read. Export your current choices.');}}});
+render();if($('restore-warning').hidden)save();else{$('save-status').textContent='Auto-save paused · Import a backup or export this session';$('save-status').classList.add('save-error');}
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Black Box Terminal — a design prototype of an archive for tokenization, stablecoins and onchain finance.">
+  <title>Black Box Terminal — Inside the archive</title>
+  <link rel="icon" href="mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#archive">Skip to news</a>
+  <div class="terminal">
+    <header class="masthead">
+      <div class="topline">
+        <a class="brand" href="index.html" aria-label="Black Box Terminal home"><img src="mark.svg" alt="" width="22" height="22"><span>BBT<span class="brand-divider">/</span>THE ARCHIVE</span></a>
+        <span class="prototype-label"><span class="status-dot"></span>DESIGN PREVIEW<span class="desktop-only"> · TEST CONTENT</span></span>
+      </div>
+      <div class="identity">
+        <div><h1>Black Box Terminal<span class="title-stop">.</span></h1><p>A closer look at finance moving onchain.</p></div>
+        <div class="edition" aria-label="September 2026 sample"><span>THE SEPTEMBER RECORD</span><div>09<span>/</span>26</div></div>
+      </div>
+      <div class="toolbar">
+        <div class="view-tabs" role="tablist" aria-label="Browse the archive">
+          <button id="categories-tab" class="view-tab active" role="tab" aria-selected="true" aria-controls="archive" data-view="categories"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h3v10H2zM7 3h3v10H7zM12 3h2v10h-2z"/></svg>Categories</button>
+          <button id="chronology-tab" class="view-tab" role="tab" aria-selected="false" aria-controls="archive" tabindex="-1" data-view="chronology"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 4h9M5 8h9M5 12h9M2 4h.1M2 8h.1M2 12h.1"/></svg>Chronology</button>
+        </div>
+        <div class="tools">
+          <label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="search" type="search" placeholder="Search archive" aria-label="Search news, companies or topics" autocomplete="off"><kbd aria-hidden="true">/</kbd></label>
+          <label class="period"><span class="sr-only">Date range</span><select id="period" aria-label="Date range"><option value="month">Sep 2026</option><option value="week">24–30 Sep</option><option value="early">1–15 Sep</option></select><span aria-hidden="true">⌄</span></label>
+        </div>
+      </div>
+    </header>
+    <nav class="mobile-categories" aria-label="Choose a category"></nav>
+    <main id="archive" tabindex="-1" role="tabpanel" aria-labelledby="categories-tab"></main>
+    <footer class="archive-footer"><span id="record-count" role="status" aria-live="polite"></span><span class="footer-note">September test sample · claims not independently verified</span><span class="desktop-only">PUBLIC SIGNAL. LASTING RECORD.</span></footer>
+  </div>
+  <dialog id="reader" aria-labelledby="reader-title">
+    <div class="reader-shell">
+      <header class="reader-top"><span class="reader-brand">BBT <span>/</span> INSIDE THE RECORD</span><button id="close-reader" class="close-button" aria-label="Close article"><span class="desktop-only">CLOSE</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button></header>
+      <div id="reader-content" class="reader-content"></div>
+      <footer class="reader-bottom"><button id="previous-record">← Previous</button><span id="reader-position"></span><button id="next-record">Next →</button></footer>
+    </div>
+  </dialog>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>BBT — Invisible edge study</title>
+  <link rel="icon" href="mark.svg">
+  <style>
+    @font-face{font-family:Outfit;src:url('fonts/Outfit-Variable.ttf') format('truetype');font-weight:100 900;font-display:swap}
+    *{box-sizing:border-box}
+    :root{color-scheme:dark;--shift-x:0px;--shift-y:0px}
+    body{margin:0;background:#030405;color:#e6e6eb;font-family:Outfit,sans-serif;min-height:100vh;min-height:100svh;isolation:isolate}
+    .base,.reflection{position:fixed;inset:0;z-index:-1;pointer-events:none}
+    .base{background:radial-gradient(ellipse 100% 80% at 85% -20%,#8189a00c,transparent 80%)}
+    .reflection{overflow:hidden}
+    .reflection::before{content:"";position:absolute;inset:-20%;background:linear-gradient(117deg,transparent 39%,#392d4a08 43%,#72598717 46%,#b8b4c42c 48%,#d7dae22e 48.8%,#8e809d20 50%,#5135681e 52%,transparent 57%);mask-image:radial-gradient(ellipse 66% 64% at 80% 25%,#000 8%,#000b 44%,transparent 80%);filter:blur(7px);transform:translate(var(--shift-x),var(--shift-y));transition:transform 1.8s cubic-bezier(.2,.7,.2,1)}
+    main{max-width:1180px;margin:0 auto;padding:38px 48px 32px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.12em}
+    .brand img{width:27px;height:27px}
+    button{font:400 12px Outfit,sans-serif;color:#d6d5df;padding:10px 16px;border:1px solid #bdb5d522;border-radius:24px;background:#bdb5d507;cursor:pointer}
+    button[aria-pressed="false"]{color:#888592;background:transparent}
+    button:focus-visible,a:focus-visible{outline:2px solid #b4a6ca;outline-offset:5px}
+    .intro{padding:75px 0 58px}
+    .eyebrow{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#92909f}
+    h1{font-size:clamp(38px,5vw,62px);line-height:1.06;font-weight:350;letter-spacing:-.045em;margin:23px 0 20px}
+    .intro p{font-size:14px;line-height:1.6;font-weight:300;color:#92939f;margin:0}
+    .columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding:0 0 52px}
+    .window{position:relative;padding:34px 28px 36px;min-height:365px;border-radius:32px;outline:none;--px:85%;--py:0%}
+    .window::before,.window::after{content:"";position:absolute;inset:0;padding:1px;border-radius:inherit;pointer-events:none;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;transition:opacity .7s ease}
+    .window::before{background:radial-gradient(ellipse 140px 100px at 88% 0%,#d1cedc36,transparent 78%),radial-gradient(ellipse 100px 110px at 0% 100%,#81639328,transparent 75%);opacity:.52}
+    .window::after{background:radial-gradient(ellipse 200px 150px at var(--px) var(--py),#e0e2ed66 0%,#ada2be44 22%,#6d4a8930 45%,#3f254c18 62%,transparent 80%);opacity:0}
+    .window:focus-visible::after{opacity:.85}
+    .window:focus-visible{outline:1px dashed #b4a6ca55;outline-offset:5px}
+    @media(hover:hover) and (pointer:fine){.window:hover::after{opacity:.85}.window:hover::before{opacity:.7}}
+    body[data-reflection="off"] .window::before,body[data-reflection="off"] .window::after{opacity:0}
+    .number{font-size:9px;color:#75727f;letter-spacing:.09em}
+    h2{font-size:17px;font-weight:450;letter-spacing:-.02em;margin:19px 0 40px}
+    h3{font-size:29px;line-height:1.2;font-weight:350;letter-spacing:-.02em;margin:0 0 20px}
+    .window p{font-size:13px;color:#898692;line-height:1.7;margin:0}
+    footer{display:flex;justify-content:space-between;gap:24px;align-items:center;font-size:11px;color:#716e7d;line-height:1.6}
+    a{color:#a3a0ad;text-decoration:none}
+    a:hover{color:#e6e6eb}
+    @media(max-width:700px){main{padding:25px 24px}.brand{font-size:10px}.intro{padding:65px 0 40px}.columns{grid-template-columns:1fr;gap:20px;padding-bottom:40px}.window{min-height:295px;padding:30px 25px}h2{margin-bottom:28px}footer{align-items:flex-start;flex-direction:column;gap:14px}}
+    @media(max-width:700px){.reflection::before{background-position:18vw 0;mask-image:radial-gradient(ellipse 90% 70% at 70% 15%,#000 8%,transparent 80%)}}
+    @media(prefers-reduced-motion:reduce){.window::before,.window::after,.reflection::before{transition:none}.reflection::before{transform:none}}
+  </style>
+</head>
+<body data-reflection="on">
+  <div class="base" aria-hidden="true"></div>
+  <div class="reflection" aria-hidden="true"></div>
+  <main>
+    <header><div class="brand"><img src="mark.svg" alt=""><span>BLACK BOX TERMINAL</span></div><button id="toggle" aria-pressed="true">Edges on</button></header>
+    <section class="intro"><span class="eyebrow">Material study / invisible edges</span><h1>Windows into the void.</h1><p>Background sheen retained. Move slowly over a category to catch the silver-violet edge.</p></section>
+    <section class="columns" aria-label="Category surface study">
+      <article class="window" tabindex="0" aria-label="Tokenized assets reflection sample"><span class="number">01 / TOKENIZED ASSETS</span><h2>A changing financial landscape</h2><h3>Only the light reveals the edge.</h3><p>The window has no separate fill. A short, faint reflection hints at its shape within the same dark space.</p></article>
+      <article class="window" tabindex="0" aria-label="Stablecoins reflection sample"><span class="number">02 / STABLECOINS</span><h2>Money moving onchain</h2><h3>A presence, barely there.</h3><p>Hover across this window. The silver-violet reflection follows along its rim, without filling the surface.</p></article>
+      <article class="window" tabindex="0" aria-label="Financial rails reflection sample"><span class="number">03 / FINANCIAL RAILS</span><h2>The infrastructure underneath</h2><h3>Then it returns to the dark.</h3><p>Move away and the edge settles back to a faint glint. Switch edges off to compare.</p></article>
+    </section>
+    <footer><span>Isolated visual study · placeholder content · dashboard unchanged</span><a href="preview.html?study=03c">Current dashboard ↗</a></footer>
+  </main>
+  <script>
+    const toggle=document.querySelector('#toggle');
+    const motion=matchMedia('(prefers-reduced-motion: reduce)');
+    const finePointer=matchMedia('(hover:hover) and (pointer:fine)');
+    const windows=[...document.querySelectorAll('.window')];
+    toggle.addEventListener('click',()=>{const on=toggle.getAttribute('aria-pressed')!=='true';toggle.setAttribute('aria-pressed',String(on));toggle.textContent=on?'Edges on':'Edges off';document.body.dataset.reflection=on?'on':'off'});
+    let frame=null,point=null;
+    function reset(){if(frame!==null)cancelAnimationFrame(frame);frame=null;point=null;document.documentElement.style.removeProperty('--shift-x');document.documentElement.style.removeProperty('--shift-y');windows.forEach(window=>{window.style.removeProperty('--px');window.style.removeProperty('--py')})}
+    document.addEventListener('pointermove',event=>{if(event.pointerType!=='mouse'||!finePointer.matches||motion.matches)return;const panel=event.target.closest('.window'),bounds=panel?.getBoundingClientRect();point={panel,x:event.clientX,y:event.clientY,left:bounds?.left,top:bounds?.top};if(frame!==null)return;frame=requestAnimationFrame(()=>{frame=null;document.documentElement.style.setProperty('--shift-x',`${(point.x/innerWidth-.5)*36}px`);document.documentElement.style.setProperty('--shift-y',`${(point.y/innerHeight-.5)*22}px`);if(point.panel){point.panel.style.setProperty('--px',`${point.x-point.left}px`);point.panel.style.setProperty('--py',`${point.y-point.top}px`)}})},{passive:true});
+    document.documentElement.addEventListener('pointerleave',reset);
+    window.addEventListener('blur',reset);
+    motion.addEventListener('change',reset);
+    finePointer.addEventListener('change',reset);
+  </script>
+</body>
+</html>

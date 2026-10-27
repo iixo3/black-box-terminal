@@ -1,0 +1,27 @@
+.venv/
+.local/
+reports/
+__pycache__/
+*.pyc
+.env
+.env.*
+*.key
+*.pem
+*.session*
+*.sqlite*
+*.db*
+.DS_Store
+
+# Generated previews, private evidence staging, local logs
+output/
+**/output/
+.checkpoint-staging/
+*.log
+*.bundle
+*.zip
+
+# Internal notes and evidence stay outside the public copy
+docs/
+AGENTS.md
+.vault-sync
+Evidence/
